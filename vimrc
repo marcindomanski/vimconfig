@@ -11,6 +11,8 @@ set nowritebackup
 set noswapfile
 set pastetoggle=<F2>
 
+set splitbelow
+
 "custom shortcuts
 map <C-h> :tabprevious<CR>
 map <C-l> :tabnext<CR>
@@ -31,23 +33,16 @@ call pathogen#helptags()
 
 filetype plugin indent on
 
+" status line
 set laststatus=2
 set statusline=%t\ %{fugitive#statusline()}
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Trailing whitespace remove on save
 autocmd BufWritePre *.rb,*.py,*.c,*.h,*.feature,*.conf,*rc,README,CHANGELOG,README.* :%s/\s\+$//e
 
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType ruby,eruby,yaml,javascript set ai sw=2 sts=2 et
-
-" specky key bindings
-let g:speckyRunSpecCmd = "bundle exec rspec -r ~/.vim/ruby/specky_formatter.rb -f SpeckyFormatter"
-
-let g:speckyBannerKey        = "<C-S>b"
-let g:speckyQuoteSwitcherKey = "<C-S>'"
-let g:speckyRunRdocKey       = "<C-S>r"
-let g:speckySpecSwitcherKey  = "<C-S>x"
-let g:speckyRunSpecKey       = "<C-S>s"
-let g:speckyRunRdocCmd       = "fri -L -f plain"
-let g:speckyWindowType       = 2
+" syntastic config
+let g:syntastic_enable_signs=0
