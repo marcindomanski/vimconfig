@@ -1,0 +1,6 @@
+== Installation:
+
+  git clone git://github.com/marcindomanski/vimconfig.git
+  make install
+
+  Please see +Makefile+ for more details.
