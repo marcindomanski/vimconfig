@@ -1,6 +1,15 @@
 = Installation:
 
+1. Backup your current vim config
+2. Run the following
+
   git clone git://github.com/marcindomanski/vimconfig.git
+  cd vimconfig
   make install
 
-Please see +Makefile+ for more details.
+After that your vim config files will be linked to your cloned vimconfig folder. Please see +Makefile+ for more details.
+
+One extra step is required to get snipmate-snippets to work:
+
+  cd bundle/snipmate-snippets
+  rake deploy_local
