@@ -10,8 +10,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 set pastetoggle=<F2>
-
 set splitbelow
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
 
 "custom shortcuts
 map <C-h> :tabprevious<CR>
