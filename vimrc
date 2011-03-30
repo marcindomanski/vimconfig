@@ -14,6 +14,7 @@ set splitbelow
 
 " Tab completion
 set wildmode=list:longest,list:full
+set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
 
 "custom shortcuts
@@ -29,6 +30,11 @@ vmap <s-tab> <gv
 
 nmap <S-r> :w\|rubyf %<CR>
 
+"searching
+set hlsearch
+nnoremap <F3> :set hlsearch!<CR>
+
+
 " pathogen
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -38,14 +44,14 @@ filetype plugin indent on
 
 " status line
 set laststatus=2
-set statusline=%t\ %{fugitive#statusline()}
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*%f\ %m\ %{fugitive#statusline()}\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 
 " Trailing whitespace remove on save
 autocmd BufWritePre *.rb,*.py,*.c,*.h,*.feature,*.conf,*rc,README,CHANGELOG,README.* :%s/\s\+$//e
 
 " syntastic config
 let g:syntastic_enable_signs=0
+
+"colors
+"set background=dark
+"colorscheme ir_black
