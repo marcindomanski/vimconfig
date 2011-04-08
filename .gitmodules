@@ -28,3 +28,9 @@
 [submodule "bundle/color-sampler-pack"]
 	path = bundle/color-sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "bundle/snipmate-snippets"]
+	path = bundle/snipmate-snippets
+	url = git@github.com:marcindomanski/snipmate-snippets.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
