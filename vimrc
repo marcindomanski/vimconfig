@@ -30,6 +30,9 @@ vmap <s-tab> <gv
 
 nmap <S-r> :w\|rubyf %<CR>
 
+" compile js with jslint (node)
+nmap <F4> :w<CR>:make<CR>:cw<CR>
+
 "searching
 set hlsearch
 nnoremap <F3> :set hlsearch!<CR>
