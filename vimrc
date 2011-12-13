@@ -28,7 +28,7 @@ nmap <s-tab> v<
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-nmap <S-r> :w\|rubyf %<CR>
+" nmap <S-r> :w\|rubyf %<CR>
 
 " compile js with jslint (node)
 nmap <F4> :w<CR>:make<CR>:cw<CR>
@@ -51,6 +51,9 @@ set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*%f\ %m\ %{fugitive#sta
 
 " Trailing whitespace remove on save
 autocmd BufWritePre *.rb,*.py,*.c,*.h,*.feature,*.conf,*rc,README,CHANGELOG,README.* :%s/\s\+$//e
+
+" Tab settings for python
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
 " vala extras
 " Disable valadoc syntax highlight
